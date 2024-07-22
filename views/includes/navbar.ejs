@@ -1,0 +1,41 @@
+
+<div class="container-fluid nav-bar bg-transparent sticky-top">
+  <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+          <div class="icon p-2 me-2">
+            <a class="navbar-brand" href=" /listings/home "> <i class="fa-solid fa-compass"></i></a>
+          </div>
+          <div class="nav-item dropdown">
+            <a href="/listings/home" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Explore</a>
+            <div class="dropdown-menu rounded-0 m-0">
+                <a href="/listings" class="dropdown-item">Explore Our listings</a>
+                <a href="/listings/home" class="dropdown-item">Go to Home</a>
+            </div>
+        </div>
+      </a>
+      <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+          <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarCollapse">
+          <div class="navbar-nav ms-auto">
+              <a href="/listings/about" class="nav-item nav-link active">About</a>
+              <div class="nav-item dropdown">
+                  <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                  <div class="dropdown-menu rounded-0 m-0">
+                      <a href="/listings/gallery" class="dropdown-item">Property List</a>
+                      <a href="/listings/stay" class="dropdown-item">Holidays Rentals</a>
+                      <a href="/listings/iconPage" class="dropdown-item">Host your Home</a>
+                  </div>
+              </div>
+              <a href="/listings/new" class="nav-item nav-link">Accmo your home</a>
+              <% if (!currUser) { %>
+                <a href="/login" class="nav-item nav-link">login</a>
+                <a href="/signup"    class="btn-na px-3  d-lg-flex ">Signup</a>
+              <% } %>
+              <% if (currUser) { %>
+              <a href="/logout" class="nav-item nav-link">logout</a>
+              <% } %>
+      </div>
+  </nav>
+</div>
+  </body>
+ 

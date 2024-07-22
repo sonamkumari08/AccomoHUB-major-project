@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Wanderlust</title>
+  <link rel="shortcut icon" href="./favicon.svg" type="image/svg+xml">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+  integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous"> 
+
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" 
+ integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+ <link rel="preconnect" href="https://fonts.googleapis.com">
+ <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+ <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+</head>
+<style>
+
+:root {
+
+--united-nations-blue: hsl(214, 56%, 58%);
+--bright-navy-blue: hsl(214, 57%, 51%);
+--spanish-gray: hsl(0, 0%, 60%);
+--black-coral: hsl(225, 8%, 42%);
+--oxford-blue: hsl(208, 97%, 12%);
+--yale-blue: hsl(214, 72%, 33%);
+--blue-ncs: hsl(197, 100%, 36%);
+--gunmetal: hsl(206, 34%, 20%);
+--gainsboro: hsl(0, 0%, 88%);
+--cultured: hsl(0, 0%, 98%);
+--white: hsl(0, 0%, 100%);
+--black: hsl(0, 0%, 0%);
+--onyx: hsl(0, 0%, 25%);
+--jet: hsl(0, 0%, 20%);
+--red:hsl(0, 89%, 63%);
+
+/**
+ * typography
+ */
+
+--ff-poppins: "Poppins", sans-serif;
+--ff-montserrat: "Montserrat", sans-serif;
+
+--fs-1: calc(20px + 3.5vw);
+--fs-2: calc(18px + 1.6vw);
+--fs-3: calc(16px + 0.45vw);
+--fs-4: 15px;
+--fs-5: 14px;
+--fs-6: 13px;
+--fs-7: 12px;
+--fs-8: 11px;
+
+--fw-500: 500;
+--fw-600: 600;
+--fw-700: 700;
+--fw-800: 800;
+
+/**
+ * transition
+ */
+
+--transition: 0.25s ease-in-out;
+
+/**
+ * spacing
+ */
+--section-padding: 60px;
+/**
+ * border-radius
+ */
+--radius-15: 15px;
+--radius-25: 25px;
+
+}
+/*-----------------------------------*\
+* #RESET
+\*-----------------------------------*/
+
+*, *::before, *::after {
+margin: 0;
+padding: 0;
+box-sizing: border-box;
+}
+li { list-style: none; }
+a { text-decoration: none; }
+
+a,
+img,
+span,
+input,
+label,
+button,
+ion-icon { display: block; }
+
+input,
+button {
+background: none;
+border: none;
+font: inherit;
+}
+button { cursor: pointer; }
+
+input { width: 100%; }
+
+ion-icon { pointer-events: none; }
+/*-----------------------------------*\
+* #REUSED STYLE
+\*-----------------------------------*/
+
+.container { padding-inline: 15px; }
+
+.btn {
+color: var(--white);
+text-transform: uppercase;
+font-size: var(--fs-5);
+border-radius: 100px;
+padding: var(--padding, 8px 18px);
+border: var(--border-width, 2px) solid transparent;
+transition: var(--transition);
+}
+
+.btn-primary {
+background: var(--red);
+border-color: var(--red);
+}
+
+.btn-primary:is(:hover, :focus) {
+background: var(--yale-blue);
+border-color: var(--yale-blue);
+}
+
+.btn-secondary { border-color: var(--white); }
+
+.btn-secondary:is(:hover, :focus) { background: blue; }
+
+.h1,
+.h2,
+.h3 {
+font-weight: var(--fw-800);
+font-family: var(--ff-montserrat);
+text-transform: uppercase;
+}
+
+.h1 {
+color: var(--black);
+font-size: var(--fs-1);
+}
+
+.h2,
+.h3 { color: var(--gunmetal); }
+
+.h2 { font-size: var(--fs-2); }
+
+.h3 {
+font-size: var(--fs-3);
+font-weight: var(--fw-700);
+}
+
+.section-subtitle {
+color: var(--bright-navy-blue);
+font-size: var(--fs-5);
+text-transform: uppercase;
+font-family: var(--ff-montserrat);
+margin-bottom: 8px;
+}
+
+.section-title { margin-bottom: 15px; }
+
+.section-text {
+color: var(--black-coral);
+margin-bottom: 30px;
+}
+.card-text {
+color: var(--black-coral);
+font-size: var(--fs-5);
+}
+
+.nav-bar {
+    position: relative;
+    transition: .5s;
+    z-index: 9999;
+}
+.nav-bar.sticky-top {
+    position: sticky;
+    padding: 0;
+    z-index: 9999;
+}
+
+.navbar {
+    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
+}
+
+.navbar .dropdown-toggle::after {
+    border: none;
+    content: "\f107";
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    vertical-align: middle;
+    margin-left: 5px;
+    transition: .5s;
+}
+.navbar .dropdown-toggle[aria-expanded=true]::after {
+    transform: rotate(-180deg);
+}
+
+.navbar-light .navbar-nav .nav-link {
+    margin-right: 30px;
+    padding: 25px 0;
+    color: #FFFFFF;
+    font-size: 15px;
+    text-transform: uppercase;
+    outline: none;
+}
+
+.navbar-light .navbar-nav .nav-link:hover,
+.navbar-light .navbar-nav .nav-link.active {
+    color: blue;
+}
+
+@media (max-width: 991.98px) {
+    .nav-bar {
+        margin: 0;
+        padding: 0;
+    }
+
+    .navbar-light .navbar-nav .nav-link  {
+        margin-right: 0;
+        padding: 10px 0;
+    }
+
+    .navbar-light .navbar-nav {
+        border-top: 1px solid #EEEEEE;
+    }
+}
+
+.navbar-light .navbar-brand {
+    height: 75px;
+   
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: var(--dark);
+    font-weight: 500;
+}
+
+@media (min-width: 992px) {
+    .navbar .nav-item .dropdown-menu {
+        display: block;
+        top: 100%;
+        margin-top: 0;
+        transform: rotateX(-75deg);
+        transform-origin: 0% 0%;
+        opacity: 0;
+        visibility: hidden;
+        transition: .5s;
+        
+    }
+    .navbar .nav-item:hover .dropdown-menu {
+        transform: rotateX(0deg);
+        visibility: visible;
+        transition: .5s;
+        opacity: 1;
+       
+    }
+}
+.fa-compass {
+   color: #fe424d;
+   font-size: 50px;
+   margin-left: 60px;
+}
+/*Hero */
+.hero {
+  display: grid;
+place-items: center;
+margin-bottom: 0px;
+text-align: center;
+
+}
+.hero-title { margin-bottom: 10px; }
+.hero-text {
+color: var(--black);
+font-size: var(--fs-5);
+margin-bottom: 40px;
+}
+.btn-group {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 10px;
+}
+/*-----------------------------------*\
+* #TOUR SEARCH
+\*-----------------------------------*/
+
+.tour-search {
+  margin-top: 0%;
+background: var(--bright-navy-blue);
+padding-block: var(--section-padding);
+}
+
+.tour-search-form .input-label {
+color: var(--white);
+font-size: var(--fs-4);
+margin-left: 20px;
+margin-bottom: 10px;
+}
+
+.tour-search-form .input-field {
+background: var(--white);
+padding: 10px 15px;
+font-size: var(--fs-5);
+border-radius: 50px;
+}
+
+.tour-search-form .input-field::placeholder { color: var(--spanish-gray); }
+
+.tour-search-form .input-field::-webkit-datetime-edit {
+color: var(--spanish-gray);
+text-transform: uppercase;
+}
+
+.tour-search-form .input-wrapper { margin-bottom: 15px; }
+
+.tour-search .btn {
+width: 100%;
+--border-width: 1px;
+font-weight: var(--fw-600);
+margin-top: 35px;
+}
+
+/*-----------------------------------*\
+* #POPULAR
+\*-----------------------------------*/
+
+.popular { padding-block: var(--section-padding); }
+
+.popular-list,
+.popular-list > li:not(:last-child) { margin-bottom: 30px; }
+
+.popular-card {
+position: relative;
+overflow: hidden;
+border-radius: var(--radius-25);
+height: 430px;
+}
+
+.popular-card .card-img { height: 100%; }
+
+.popular-card .card-img img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.popular-card .card-content {
+position: absolute;
+bottom: 20px;
+left: 20px;
+right: 20px;
+background: var(--white);
+border-radius: var(--radius-25);
+padding: 20px;
+}
+
+
+.popular-card .card-rating {
+background: var(--bright-navy-blue);
+color: var(--white);
+position: absolute;
+top: 0;
+right: 25px;
+display: flex;
+align-items: center;
+gap: 1px;
+transform: translateY(-50%);
+padding: 6px 10px;
+border-radius: 20px;
+font-size: 14px;
+}
+
+.popular-card .card-subtitle {
+color: var(--blue-ncs);
+font-size: var(--fs-6);
+text-transform: uppercase;
+margin-bottom: 8px;
+}
+
+.popular-card .card-title { margin-bottom: 5px; }
+
+.popular-card :is(.card-subtitle, .card-title) > a { color: inherit; }
+
+.popular .btn { margin-inline: auto; }
+/*-----------------------------------*\
+* #PACKAGE
+\*-----------------------------------*/
+
+.package { padding-block: var(--section-padding); }
+
+.package-list { margin-bottom: 40px; }
+
+.package-list > li:not(:last-child) { margin-bottom: 30px; }
+
+.package-card {
+background: var(--cultured);
+overflow: hidden;
+border-radius: 15px;
+}
+
+.package-card .card-banner { height: 250px; }
+
+.package-card .card-banner img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+.package-card .card-content { padding: 30px 20px; }
+
+.package-card .card-title { margin-bottom: 15px; }
+
+.package-card .card-text {
+line-height: 1.6;
+margin-bottom: 20px;
+}
+
+.card-meta-list {
+background: var(--white);
+max-width: max-content;
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+padding: 8px;
+box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
+border-radius: 50px;
+}
+
+.card-meta-item { position: relative; }
+
+.card-meta-item:not(:last-child)::after {
+content: "";
+position: absolute;
+top: 4px;
+right: -1px;
+bottom: 4px;
+width: 1px;
+background: hsla(0, 0%, 0%, 0.3);
+}
+
+.meta-box {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 5px;
+padding-inline: 9px;
+color: var(--black-coral);
+font-size: var(--fs-8);
+}
+
+.meta-box > ion-icon {
+color: var(--bright-navy-blue);
+font-size: 13px;
+}
+
+.package-card .card-price {
+background: var(--united-nations-blue);
+color: var(--white);
+padding: 25px 20px;
+text-align: center;
+}
+
+.package-card .card-price .wrapper {
+display: flex;
+flex-wrap: wrap;
+justify-content: center;
+align-items: center;
+gap: 5px 15px;
+margin-bottom: 10px;
+}
+
+.package-card .card-price .reviews { font-size: var(--fs-5); }
+
+.package-card .card-rating {
+display: flex;
+justify-content: center;
+align-items: center;
+gap: 1px;
+font-size: 14px;
+}
+
+.package-card .card-rating ion-icon:last-child { color: hsl(0, 0%, 80%); }
+
+.package-card .price {
+font-size: var(--fs-2);
+font-family: var(--ff-montserrat);
+font-weight: var(--fw-800);
+margin-bottom: 20px;
+}
+
+.package-card .price span {
+font-size: var(--fs-7);
+font-weight: initial;
+}
+
+.package .btn { margin-inline: auto; }
+/*-----------------------------------*\
+* #GALLERY
+\*-----------------------------------*/
+
+.gallery { padding-block: var(--section-padding); }
+
+.gallery-list {
+display: grid;
+grid-template-columns: 1fr 1fr;
+gap: 10px;
+}
+
+.gallery-image {
+width: 100%;
+height: 100%;
+border-radius: var(--radius-15);
+overflow: hidden;
+}
+
+.gallery-item:nth-child(3) { grid-area: 1 / 2 / 3 / 3; }
+
+.gallery-image img {
+width: 100%;
+height: 100%;
+object-fit: cover;
+}
+
+
+
+/*-----------------------------------*\
+* #FOOTER
+\*-----------------------------------*/
+  
+  .f-info-links a {
+  text-decoration: none;
+  color: black;
+  }
+  .f-info-links a:hover {
+      text-decoration: underline;
+   }
+   .f-info-links{
+      width: 100%;
+      font-size: 15px;
+   }
+   .f-info-links a:hover{
+     color: rgb(213, 60, 91);
+     font-weight: 300;
+   }
+   .f-info-socials,.f-info-brand{
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+   }
+   .f-info-socials i {
+      margin-left: 1rem;
+      font-size: 1.2rem;
+   }
+      .f-info{
+          text-align: center;
+          display: flex;
+          background-color: #ebebeb;
+          height: 8rem;
+          flex-wrap: wrap;
+          justify-content: center;
+          align-items: space-evenly;
+      }
+      .footer-bar{
+        font-size: 10px;
+      }
+
+/**
+* responsive for larger than 580px screen
+*/
+
+@media (min-width: 580px) {
+
+/**
+ * REUSED STYLE
+ */
+
+.container {
+  max-width: 580px;
+  margin-inline: auto;
+}
+
+.btn {
+  --fs-5: 16px;
+  --padding: 12px 30px;
+}
+
+section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
+  text-align: center;
+}
+.section-text { margin-bottom: 40px; }
+
+.card-text { --fs-5: 15px; }
+/**
+ * HERO
+ */
+
+.hero {
+  min-height: 800px;
+  padding-top: 0px;
+}
+.hero-text { --fs-5: 15px; }
+
+.btn-group { gap: 20px; }
+
+/**
+ * TOUR SEARCH
+ */
+
+.tour-search-form {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: flex-end;
+  gap: 15px;
+}
+
+.tour-search-form .input-wrapper { margin-bottom: 0; }
+
+.tour-search-form .input-field { padding: 16px 20px; }
+
+.tour-search .btn {
+  grid-column: span 2;
+  margin-top: 20px;
+}
+
+/**
+ * POPULAR
+ */
+
+.popular-card .card-content { right: auto; }
+}
+
+/**
+* responsive for larger than 768px screen
+*/
+
+@media (min-width: 768px) {
+
+/**
+ * CUSTOM PROPERTY
+ */
+
+:root {
+
+  /**
+   * typography
+   */
+
+  --fs-5: 15px;
+
+}
+/**
+ * REUSED STYLE
+ */
+
+.container { max-width: 800px; }
+
+.section-text {
+  max-width: 60ch;
+  margin-inline: auto;
+}
+
+.social-list { gap: 10px; }
+/**
+ * POPULAR
+ */
+.popular-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.popular-list > li:not(:last-child) { margin-bottom: 0; }
+
+.popular-card .card-content { right: 20px; }
+/**
+ * PACKAGE
+ */
+
+.package-list { margin-bottom: 50px; }
+
+.package-list > li:not(:last-child) { margin-bottom: 40px; }
+
+.package-card {
+  display: grid;
+  grid-template-columns: 1.3fr 1.5fr 1fr;
+}
+
+.package-card .card-banner { height: 100%; }
+
+.package-card .card-content { padding: 40px; }
+
+.package-card .card-price {
+  display: grid;
+  place-content: center;
+}
+
+.package-card .card-price .wrapper { margin-bottom: 15px; }
+/**
+ * GALLERY
+ */
+
+.gallery { padding-bottom: calc(var(--section-padding * 2)); }
+
+.gallery-list {
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
+}
+
+.gallery-image { border-radius: var(--radius-25); }
+
+/**
+ * CTA
+ */
+
+.cta .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cta-content { width: calc(100% - 225px); }
+
+.cta .section-text { margin-inline: 0; }
+}
+
+/**
+* responsive for larger than 992px screen
+*/
+
+@media (min-width: 992px) {
+
+.container { max-width: 1050px; }
+
+.hero .container { max-width: 740px; }
+
+.tour-search-form { grid-template-columns: repeat(5, 1fr); }
+
+.tour-search .btn {
+  --padding: 15px;
+  grid-column: unset;
+  margin-top: 0;
+}
+
+.popular-list { grid-template-columns: repeat(3, 1fr); }
+
+
+.meta-box { --fs-8: 13px; }
+
+.meta-box > ion-icon { font-size: 15px; }
+
+.cta .section-title { max-width: 25ch; }
+}
+/**
+* responsive for larger than 1200px screen
+*/
+
+@media (min-width: 1200px) {
+:root {
+  --section-padding: 100px;
+
+}
+.fa-compass {
+   color: #fe424d;
+   font-size: 50px;
+   margin-left: 60px;
+}
+.container { max-width: 1180px; }
+}
+</style>
+
+  <div class="container-fluid nav-bar bg-transparent sticky-top">
+    <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
+      <div class="icon p-2 me-2">
+        <a class="navbar-brand" href="/listings/home"> <i class="fa-solid fa-compass"></i></a>
+      </div>
+      <div class="nav-item dropdown">
+        <a href="" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Explore</a>
+        <div class="dropdown-menu rounded-0 m-0">
+          <a href="/listings" class="dropdown-item">Explore Our listings</a>
+          <a href="/listings/new" class="dropdown-item">Host Your Home</a>
+        </div>
+    </div>
+  </a>
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <div class="navbar-nav ms-auto">
+                <a href="/listings" class="nav-item nav-link active">Home</a>
+                <a href="/listings/about" class="nav-item nav-link">About</a>
+                <div class="nav-item dropdown">
+                    <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Property</a>
+                    <div class="dropdown-menu rounded-0 m-0">
+                      <a href="/listings/gallery" class="dropdown-item">Property List</a>
+                      <a href="/listings/stay" class="dropdown-item">Holidays Rentals</a>
+                      <a href="/listings/iconPage" class="dropdown-item">View our Accomo</a>
+                    </div>
+                </div>
+                <a href="/listings/new" class="nav-item nav-link">Accmo your home</a>
+        </div>
+    </nav>
+  </div>
+      <!-- 
+        - #HERO
+      -->
+      <section class="hero" id="home">
+        <div class="container">
+          <h2 class="h1 hero-title">Welcome to our Accomo </h2>
+          <p class="hero-text">
+            Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy
+             text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.
+          </p>
+          <div class="btn-group">
+           <a href="/listings" ><button class="btn btn-primary" >Host Now</button></a>
+            <a href="/signup"><button class="btn btn-secondary"> Book Now </button></a>
+          </div>
+        </div>
+      </section>
+      <!-- 
+        - #TOUR SEARCH
+      -->
+
+      <section class="tour-search">
+        <div class="container">
+
+          <form action="" class="tour-search-form">
+            <div class="input-wrapper">
+              <label for="destination" class="input-label">Search Destination*</label>
+
+              <input type="text" name="destination" id="destination" required placeholder="Enter Destination"
+                class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="people" class="input-label">Pax Number*</label>
+
+              <input type="number" name="people" id="people" required placeholder="No.of People" class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkin" class="input-label">Checkin Date**</label>
+
+              <input type="date" name="checkin" id="checkin" required class="input-field">
+            </div>
+
+            <div class="input-wrapper">
+              <label for="checkout" class="input-label">Checkout Date*</label>
+
+              <input type="date" name="checkout" id="checkout" required class="input-field">
+            </div>
+
+            <button type="submit" class="btn btn-secondary">Inquire now</button>
+
+          </form>
+        </div>
+      </section>
+      <!-- 
+        - #POPULAR
+      -->
+      <section class="popular" id="destination">
+        <div class="container">
+          <p class="section-subtitle">Uncover place</p>
+          <h2 class="h2 section-title">Popular destination</h2>
+          <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+          </p>
+
+          <ul class="popular-list">
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="/media/image-4.png" alt="San miguel, italy" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="/listings/curasalpage">Italy</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="/listings/testpage">San miguel</a>
+                  </h3>
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+                <figure class="card-img">
+                 <img src="/media/image-2.png" alt="Burj khalifa, dubai" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="/listings/testpage">Dubai</a>
+                  </p>
+
+                  <h3 class="h3 card-title">
+                    <a href="/listings/testpage">Burj khalifa</a>
+                  </h3>
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+                </div>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="popular-card">
+
+                <figure class="card-img">
+                  <img src="/media/paris.png" alt="Kyoto temple, japan" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+                  <div class="card-rating">
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                    <ion-icon name="star"></ion-icon>
+                  </div>
+
+                  <p class="card-subtitle">
+                    <a href="/listings/iconpage">Japan</a>
+                  </p>
+                  <h3 class="h3 card-title">
+                    <a href="/listings/iconpage">Kyoto temple</a>
+                  </h3>
+                  <p class="card-text">
+                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
+                  </p>
+                </div>
+              </div>
+            </li>
+          </ul>
+
+          <a href="/listings"><button class="btn btn-primary">More destintion</button></a>
+
+        </div>
+      </section>
+      <!-- 
+        - #PACKAGE
+      -->
+      <section class="package" id="package">
+        <div class="container">
+
+          <p class="section-subtitle">Popular Packeges</p>
+          <h2 class="h2 section-title">Checkout Our Packeges</h2>
+          <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+          </p>
+
+          <ul class="package-list">
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="/media/image-1.png"alt="Experience The Great Holiday On Beach" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h3 card-title">Experience The Great Holiday On Beach</h3>
+                  <p class="card-text">
+                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
+                    cras, aspernatur.
+                  </p>
+
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+                        <p class="text">Malaysia</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(25 reviews)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <p class="price">
+                    $750
+                    <span>/ per person</span>
+                  </p>
+                  <a href="/signup"><button class="btn btn-secondary">Book Now</button></a>
+                </div>
+              </div>
+            </li>
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="/media/image-3.png" alt="Summer Holiday To The Oxolotan River" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h3 card-title">Summer Holiday To The Oxolotan River</h3>
+                  <p class="card-text">
+                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
+                    cras, aspernatur.
+                  </p>
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+                        <p class="text">Malaysia</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(20 reviews)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+                  <p class="price">
+                    $520
+                    <span>/ per person</span>
+                  </p>
+                  <a href="/signup"><button class="btn btn-secondary">Book Now</button></a>
+                </div>
+              </div>
+            </li>
+
+            <li>
+              <div class="package-card">
+                <figure class="card-banner">
+                  <img src="/media/image-s6.png" alt="Santorini Island's Weekend Vacation" loading="lazy">
+                </figure>
+
+                <div class="card-content">
+                  <h3 class="h3 card-title">Santorini Island's Weekend Vacation</h3>
+                  <p class="card-text">
+                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
+                    cras, aspernatur.
+                  </p>
+
+                  <ul class="card-meta-list">
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="time"></ion-icon>
+                        <p class="text">7D/6N</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="people"></ion-icon>
+                        <p class="text">pax: 10</p>
+                      </div>
+                    </li>
+
+                    <li class="card-meta-item">
+                      <div class="meta-box">
+                        <ion-icon name="location"></ion-icon>
+                        <p class="text">Malaysia</p>
+                      </div>
+                    </li>
+                  </ul>
+                </div>
+
+                <div class="card-price">
+                  <div class="wrapper">
+                    <p class="reviews">(40 reviews)</p>
+                    <div class="card-rating">
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                      <ion-icon name="star"></ion-icon>
+                    </div>
+                  </div>
+
+                  <p class="price">
+                    $660
+                    <span>/ per person</span>
+                  </p>
+                  <a href="/signup"><button class="btn btn-secondary">Book Now</button> </a>
+                </div>
+              </div>
+            </li>
+          </ul>
+         <a href="/listings"><button class="btn btn-primary">View All Packages</button></a>
+
+        </div>
+      </section>
+      <!-- 
+        - #GALLERY
+      -->
+      <section class="gallery" id="gallery">
+        <div class="container">
+          <p class="section-subtitle">Photo Gallery</p>
+          <h2 class="h2 section-title">Photo's From Visitors</h2>
+          <p class="section-text">
+            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
+            Sit ornare
+            mollitia tenetur, aptent.
+          </p>
+          <ul class="gallery-list">
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/media/paris.png" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/media/story-3.png" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/media/banner.png" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/media/new-delhi.png" alt="Gallery image">
+              </figure>
+            </li>
+
+            <li class="gallery-item">
+              <figure class="gallery-image">
+                <img src="/media/image-s6.png" alt="Gallery image">
+              </figure>
+            </li>
+          </ul>
+        </div>
+      </section>
+    </article>
+  </main>
+  <!-- 
+    - #FOOTER
+  -->
+  <footer>
+    <div class="f-info mt-5">
+        <div class="f-info-socials">
+           <a href="#" ><i class="fa-brands fa-square-facebook"></i></a>
+           <a href=" https://www.instagram.com/half_engineer0034?igsh=ajhjamszcm9lbTFr"> <i class="fa-brands fa-square-instagram"></i></a>
+           <a href=" https://www.linkedin.com/in/ayush-kumar-prince-443700235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " ><i class="fa-brands fa-linkedin"></i></a>
+
+        </div>
+        <div class="f-info-brand"> &copy 2024  ACCOMO private Limited Made By Sonam </div>
+        <div class="f-info-links">
+            <a href="/privacy">Privacy</a>
+        </div>
+      </div >
+</footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+  <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+  <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
