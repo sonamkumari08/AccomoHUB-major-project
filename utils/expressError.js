@@ -6,4 +6,8 @@ class expressError extends Error {
     }
 }
 
+<<<<<<< HEAD
 module.exports = expressError;
+=======
+module.exports = expressError;
+>>>>>>> e4416e09de3dbb045dc6172a3e445ee091aaeff4
