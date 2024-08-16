@@ -23,6 +23,7 @@ router
 router.get("/new",isLoggedIn, ( listingController.renderNewForm));
 
 router.get("/gallery", (listingController.renderGallery  ));
+router.get("/farmPage", (listingController.renderNewFarmPage  ));
 
 router.get("/tranding",(listingController.renderTranding) );
 //about page

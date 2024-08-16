@@ -26,6 +26,7 @@ body{
  }
  a{
    text-decoration: none;
+   color: #222222;
 }
 
 /*** Navbar ***/
@@ -211,9 +212,24 @@ body{
   }
   /* card effect   Index page*/
   
+ .text-overlay {
+   position: absolute;
+   top: 10px; 
+   left: 20px; 
+   font-size: 15px;
+   font-weight: bold;
+   color: black; /* text color */
+   background-color: #fff; /* text background color */
+   padding: 5px;
+   border-radius: 15px;
+ }
   .card-img-overlay{
   opacity: 0;
   }
+  .card-img-overlay{
+   background-color: white;
+   color: #fe424d;
+   }
   .card-img-overlay:hover{
   opacity: 0.2;
   background-color: white;

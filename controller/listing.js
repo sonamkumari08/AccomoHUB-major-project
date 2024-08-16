@@ -12,6 +12,9 @@ const Listing = require("../Models/listing");
   module.exports.renderNewForm = (req, res) => {
     res.render("listings/new.ejs");
   };
+  module.exports.renderNewFarmPage = async (req, res) => {
+    res.render("listings/farmPage.ejs");
+  };
   
   module.exports.renderGallery = (req, res) => {
     res.render("listings/gallery.ejs");
