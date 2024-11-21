@@ -16,6 +16,7 @@
  <link rel="preconnect" href="https://fonts.googleapis.com">
  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans&display=swap" rel="stylesheet">
+ <link href="/css/style.css" rel="stylesheet">
 </head>
 <style>
 
@@ -29,8 +30,6 @@
 --yale-blue: hsl(214, 72%, 33%);
 --blue-ncs: hsl(197, 100%, 36%);
 --gunmetal: hsl(206, 34%, 20%);
---gainsboro: hsl(0, 0%, 88%);
---cultured: hsl(0, 0%, 98%);
 --white: hsl(0, 0%, 100%);
 --black: hsl(0, 0%, 0%);
 --onyx: hsl(0, 0%, 25%);
@@ -173,109 +172,14 @@ margin-bottom: 8px;
 color: var(--black-coral);
 margin-bottom: 30px;
 }
-.card-text {
-color: var(--black-coral);
-font-size: var(--fs-5);
-}
 
-.nav-bar {
-    position: relative;
-    transition: .5s;
-    z-index: 9999;
-}
-.nav-bar.sticky-top {
-    position: sticky;
-    padding: 0;
-    z-index: 9999;
-}
 
-.navbar {
-    box-shadow: 0 0 30px rgba(0, 0, 0, .08);
-}
 
-.navbar .dropdown-toggle::after {
-    border: none;
-    content: "\f107";
-    font-family: "Font Awesome 5 Free";
-    font-weight: 900;
-    vertical-align: middle;
-    margin-left: 5px;
-    transition: .5s;
-}
-.navbar .dropdown-toggle[aria-expanded=true]::after {
-    transform: rotate(-180deg);
-}
-
-.navbar-light .navbar-nav .nav-link {
-    margin-right: 30px;
-    padding: 25px 0;
-    color: #FFFFFF;
-    font-size: 15px;
-    text-transform: uppercase;
-    outline: none;
-}
-
-.navbar-light .navbar-nav .nav-link:hover,
-.navbar-light .navbar-nav .nav-link.active {
-    color: blue;
-}
-
-@media (max-width: 991.98px) {
-    .nav-bar {
-        margin: 0;
-        padding: 0;
-    }
-
-    .navbar-light .navbar-nav .nav-link  {
-        margin-right: 0;
-        padding: 10px 0;
-    }
-
-    .navbar-light .navbar-nav {
-        border-top: 1px solid #EEEEEE;
-    }
-}
-
-.navbar-light .navbar-brand {
-    height: 75px;
-   
-}
-
-.navbar-light .navbar-nav .nav-link {
-    color: var(--dark);
-    font-weight: 500;
-}
-
-@media (min-width: 992px) {
-    .navbar .nav-item .dropdown-menu {
-        display: block;
-        top: 100%;
-        margin-top: 0;
-        transform: rotateX(-75deg);
-        transform-origin: 0% 0%;
-        opacity: 0;
-        visibility: hidden;
-        transition: .5s;
-        
-    }
-    .navbar .nav-item:hover .dropdown-menu {
-        transform: rotateX(0deg);
-        visibility: visible;
-        transition: .5s;
-        opacity: 1;
-       
-    }
-}
-.fa-compass {
-   color: #fe424d;
-   font-size: 50px;
-   margin-left: 60px;
-}
 /*Hero */
 .hero {
   display: grid;
 place-items: center;
-margin-bottom: 0px;
+height: 300px;
 text-align: center;
 
 }
@@ -285,228 +189,8 @@ color: var(--black);
 font-size: var(--fs-5);
 margin-bottom: 40px;
 }
-.btn-group {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-gap: 10px;
-}
-/*-----------------------------------*\
-* #TOUR SEARCH
-\*-----------------------------------*/
-
-.tour-search {
-  margin-top: 0%;
-background: var(--bright-navy-blue);
-padding-block: var(--section-padding);
-}
-
-.tour-search-form .input-label {
-color: var(--white);
-font-size: var(--fs-4);
-margin-left: 20px;
-margin-bottom: 10px;
-}
-
-.tour-search-form .input-field {
-background: var(--white);
-padding: 10px 15px;
-font-size: var(--fs-5);
-border-radius: 50px;
-}
-
-.tour-search-form .input-field::placeholder { color: var(--spanish-gray); }
-
-.tour-search-form .input-field::-webkit-datetime-edit {
-color: var(--spanish-gray);
-text-transform: uppercase;
-}
-
-.tour-search-form .input-wrapper { margin-bottom: 15px; }
-
-.tour-search .btn {
-width: 100%;
---border-width: 1px;
-font-weight: var(--fw-600);
-margin-top: 35px;
-}
-
-/*-----------------------------------*\
-* #POPULAR
-\*-----------------------------------*/
-
-.popular { padding-block: var(--section-padding); }
-
-.popular-list,
-.popular-list > li:not(:last-child) { margin-bottom: 30px; }
-
-.popular-card {
-position: relative;
-overflow: hidden;
-border-radius: var(--radius-25);
-height: 430px;
-}
-
-.popular-card .card-img { height: 100%; }
-
-.popular-card .card-img img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-.popular-card .card-content {
-position: absolute;
-bottom: 20px;
-left: 20px;
-right: 20px;
-background: var(--white);
-border-radius: var(--radius-25);
-padding: 20px;
-}
 
 
-.popular-card .card-rating {
-background: var(--bright-navy-blue);
-color: var(--white);
-position: absolute;
-top: 0;
-right: 25px;
-display: flex;
-align-items: center;
-gap: 1px;
-transform: translateY(-50%);
-padding: 6px 10px;
-border-radius: 20px;
-font-size: 14px;
-}
-
-.popular-card .card-subtitle {
-color: var(--blue-ncs);
-font-size: var(--fs-6);
-text-transform: uppercase;
-margin-bottom: 8px;
-}
-
-.popular-card .card-title { margin-bottom: 5px; }
-
-.popular-card :is(.card-subtitle, .card-title) > a { color: inherit; }
-
-.popular .btn { margin-inline: auto; }
-/*-----------------------------------*\
-* #PACKAGE
-\*-----------------------------------*/
-
-.package { padding-block: var(--section-padding); }
-
-.package-list { margin-bottom: 40px; }
-
-.package-list > li:not(:last-child) { margin-bottom: 30px; }
-
-.package-card {
-background: var(--cultured);
-overflow: hidden;
-border-radius: 15px;
-}
-
-.package-card .card-banner { height: 250px; }
-
-.package-card .card-banner img {
-width: 100%;
-height: 100%;
-object-fit: cover;
-}
-
-.package-card .card-content { padding: 30px 20px; }
-
-.package-card .card-title { margin-bottom: 15px; }
-
-.package-card .card-text {
-line-height: 1.6;
-margin-bottom: 20px;
-}
-
-.card-meta-list {
-background: var(--white);
-max-width: max-content;
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-padding: 8px;
-box-shadow: 0 0 5px hsla(0, 0%, 0%, 0.15);
-border-radius: 50px;
-}
-
-.card-meta-item { position: relative; }
-
-.card-meta-item:not(:last-child)::after {
-content: "";
-position: absolute;
-top: 4px;
-right: -1px;
-bottom: 4px;
-width: 1px;
-background: hsla(0, 0%, 0%, 0.3);
-}
-
-.meta-box {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 5px;
-padding-inline: 9px;
-color: var(--black-coral);
-font-size: var(--fs-8);
-}
-
-.meta-box > ion-icon {
-color: var(--bright-navy-blue);
-font-size: 13px;
-}
-
-.package-card .card-price {
-background: var(--united-nations-blue);
-color: var(--white);
-padding: 25px 20px;
-text-align: center;
-}
-
-.package-card .card-price .wrapper {
-display: flex;
-flex-wrap: wrap;
-justify-content: center;
-align-items: center;
-gap: 5px 15px;
-margin-bottom: 10px;
-}
-
-.package-card .card-price .reviews { font-size: var(--fs-5); }
-
-.package-card .card-rating {
-display: flex;
-justify-content: center;
-align-items: center;
-gap: 1px;
-font-size: 14px;
-}
-
-.package-card .card-rating ion-icon:last-child { color: hsl(0, 0%, 80%); }
-
-.package-card .price {
-font-size: var(--fs-2);
-font-family: var(--ff-montserrat);
-font-weight: var(--fw-800);
-margin-bottom: 20px;
-}
-
-.package-card .price span {
-font-size: var(--fs-7);
-font-weight: initial;
-}
-
-.package .btn { margin-inline: auto; }
 /*-----------------------------------*\
 * #GALLERY
 \*-----------------------------------*/
@@ -536,47 +220,6 @@ object-fit: cover;
 
 
 
-/*-----------------------------------*\
-* #FOOTER
-\*-----------------------------------*/
-  
-  .f-info-links a {
-  text-decoration: none;
-  color: black;
-  }
-  .f-info-links a:hover {
-      text-decoration: underline;
-   }
-   .f-info-links{
-      width: 100%;
-      font-size: 15px;
-   }
-   .f-info-links a:hover{
-     color: rgb(213, 60, 91);
-     font-weight: 300;
-   }
-   .f-info-socials,.f-info-brand{
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      width: 100%;
-   }
-   .f-info-socials i {
-      margin-left: 1rem;
-      font-size: 1.2rem;
-   }
-      .f-info{
-          text-align: center;
-          display: flex;
-          background-color: #ebebeb;
-          height: 8rem;
-          flex-wrap: wrap;
-          justify-content: center;
-          align-items: space-evenly;
-      }
-      .footer-bar{
-        font-size: 10px;
-      }
 
 /**
 * responsive for larger than 580px screen
@@ -604,44 +247,18 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
 .section-text { margin-bottom: 40px; }
 
 .card-text { --fs-5: 15px; }
+}
 /**
  * HERO
  */
 
 .hero {
-  min-height: 800px;
+  min-height: 400px;
   padding-top: 0px;
 }
 .hero-text { --fs-5: 15px; }
 
 .btn-group { gap: 20px; }
-
-/**
- * TOUR SEARCH
- */
-
-.tour-search-form {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  align-items: flex-end;
-  gap: 15px;
-}
-
-.tour-search-form .input-wrapper { margin-bottom: 0; }
-
-.tour-search-form .input-field { padding: 16px 20px; }
-
-.tour-search .btn {
-  grid-column: span 2;
-  margin-top: 20px;
-}
-
-/**
- * POPULAR
- */
-
-.popular-card .card-content { right: auto; }
-}
 
 /**
 * responsive for larger than 768px screen
@@ -667,49 +284,11 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
  */
 
 .container { max-width: 800px; }
-
 .section-text {
   max-width: 60ch;
   margin-inline: auto;
 }
 
-.social-list { gap: 10px; }
-/**
- * POPULAR
- */
-.popular-list {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 30px;
-  margin-bottom: 50px;
-}
-
-.popular-list > li:not(:last-child) { margin-bottom: 0; }
-
-.popular-card .card-content { right: 20px; }
-/**
- * PACKAGE
- */
-
-.package-list { margin-bottom: 50px; }
-
-.package-list > li:not(:last-child) { margin-bottom: 40px; }
-
-.package-card {
-  display: grid;
-  grid-template-columns: 1.3fr 1.5fr 1fr;
-}
-
-.package-card .card-banner { height: 100%; }
-
-.package-card .card-content { padding: 40px; }
-
-.package-card .card-price {
-  display: grid;
-  place-content: center;
-}
-
-.package-card .card-price .wrapper { margin-bottom: 15px; }
 /**
  * GALLERY
  */
@@ -722,22 +301,7 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
 }
 
 .gallery-image { border-radius: var(--radius-25); }
-
-/**
- * CTA
- */
-
-.cta .container {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
 }
-
-.cta-content { width: calc(100% - 225px); }
-
-.cta .section-text { margin-inline: 0; }
-}
-
 /**
 * responsive for larger than 992px screen
 */
@@ -748,22 +312,6 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
 
 .hero .container { max-width: 740px; }
 
-.tour-search-form { grid-template-columns: repeat(5, 1fr); }
-
-.tour-search .btn {
-  --padding: 15px;
-  grid-column: unset;
-  margin-top: 0;
-}
-
-.popular-list { grid-template-columns: repeat(3, 1fr); }
-
-
-.meta-box { --fs-8: 13px; }
-
-.meta-box > ion-icon { font-size: 15px; }
-
-.cta .section-title { max-width: 25ch; }
 }
 /**
 * responsive for larger than 1200px screen
@@ -772,16 +320,13 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
 @media (min-width: 1200px) {
 :root {
   --section-padding: 100px;
-
-}
-.fa-compass {
-   color: #fe424d;
-   font-size: 50px;
-   margin-left: 60px;
 }
 .container { max-width: 1180px; }
 }
 </style>
+
+  <body>
+
 
   <div class="container-fluid nav-bar bg-transparent sticky-top">
     <nav class="navbar navbar-expand-lg bg-white navbar-light py-0 px-4">
@@ -815,12 +360,14 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
         </div>
     </nav>
   </div>
+
+ 
       <!-- 
         - #HERO
       -->
       <section class="hero" id="home">
         <div class="container">
-          <h2 class="h1 hero-title">Find Your Cozy Stay </h2>
+          <h2 class="h2 hero-title">Find A <span class="text-primary">Perfect Home</span> To Live With Your Family </h2>
           <p class="hero-text">
             Stay with us in India for a comfortable, homely experience. Our hosting house offers warmth and hospitality.
           </p>
@@ -830,342 +377,172 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
           </div>
         </div>
       </section>
-      <!-- 
-        - #TOUR SEARCH
-      -->
 
-      <section class="tour-search">
-        <div class="container">
-
-          <form action="" class="tour-search-form">
-            <div class="input-wrapper">
-              <label for="destination" class="input-label">Search Destination*</label>
-
-              <input type="text" name="destination" id="destination" required placeholder="Enter Destination"
-                class="input-field">
+      
+    
+      <div class="row container  mt-5" >
+        <h2 class=" h3 ">Holidays Rentals for every Style</h2>
+        <div class="col-md-4 py-3 py-md-0">
+            <div class="card" id="tpc">
+             <img src="https://a0.muscache.com/im/pictures/a0307076-8eb2-42c0-ba5e-f26219788eb7.jpg?im_w=720&im_format=avif"
+                 alt=""
+                 style="height: 20rem "
+                  class="card image-top">
+                  <a href="/listings" ><div class="text-overlay">Superhost</div>
+              <h5> <b>Cabin in Monte Rio  </b></h5>
+                <p>Mountain and Valley view
+                  </p></a>
             </div>
-
-            <div class="input-wrapper">
-              <label for="people" class="input-label">Pax Number*</label>
-
-              <input type="number" name="people" id="people" required placeholder="No.of People" class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="checkin" class="input-label">Checkin Date**</label>
-
-              <input type="date" name="checkin" id="checkin" required class="input-field">
-            </div>
-
-            <div class="input-wrapper">
-              <label for="checkout" class="input-label">Checkout Date*</label>
-
-              <input type="date" name="checkout" id="checkout" required class="input-field">
-            </div>
-
-            <button type="submit" class="btn btn-secondary">Inquire now</button>
-
-          </form>
         </div>
-      </section>
-      <!-- 
-        - #POPULAR
-      -->
-      <section class="popular" id="destination">
-        <div class="container">
-          <p class="section-subtitle">Uncover place</p>
-          <h2 class="h2 section-title">Popular destination</h2>
-          <p class="section-text">
-            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-            Sit ornare
-            mollitia tenetur, aptent.
-          </p>
-
-          <ul class="popular-list">
-
-            <li>
-              <div class="popular-card">
-
-                <figure class="card-img">
-                  <img src="/media/image-4.png" alt="San miguel, italy" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-
-                  <div class="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-
-                  <p class="card-subtitle">
-                    <a href="/listings/curasalpage">Italy</a>
-                  </p>
-
-                  <h3 class="h3 card-title">
-                    <a href="/listings/testpage">San miguel</a>
-                  </h3>
-                  <p class="card-text">
-                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                  </p>
-
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="popular-card">
-                <figure class="card-img">
-                 <img src="/media/image-2.png" alt="Burj khalifa, dubai" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-                  <div class="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-
-                  <p class="card-subtitle">
-                    <a href="/listings/testpage">Dubai</a>
-                  </p>
-
-                  <h3 class="h3 card-title">
-                    <a href="/listings/testpage">Burj khalifa</a>
-                  </h3>
-                  <p class="card-text">
-                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li>
-              <div class="popular-card">
-
-                <figure class="card-img">
-                  <img src="/media/paris.png" alt="Kyoto temple, japan" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-                  <div class="card-rating">
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                    <ion-icon name="star"></ion-icon>
-                  </div>
-
-                  <p class="card-subtitle">
-                    <a href="/listings/iconpage">Japan</a>
-                  </p>
-                  <h3 class="h3 card-title">
-                    <a href="/listings/iconpage">Kyoto temple</a>
-                  </h3>
-                  <p class="card-text">
-                    Fusce hic augue velit wisi ips quibusdam pariatur, iusto.
-                  </p>
-                </div>
-              </div>
-            </li>
-          </ul>
-
-          <a href="/listings"><button class="btn btn-primary">More destintion</button></a>
-
+        <div class="col-md-4 py-3 py-md-0">
+            <div class="card" id="tpc">
+              
+               <img src="https://a0.muscache.com/im/pictures/miso/Hosting-885171494011814801/original/e233d639-b034-4888-bdb1-72fcd49c459a.jpeg?im_w=720&im_format=avif"
+                 alt="" 
+                 style="height: 20rem "
+                 class="card image-top">
+                 <a href="/listings" ><div class="text-overlay">Superhost</div>
+                  <h5><b>Cabin in Guerneville</b> </h5>
+                  <p>Fresh + Cozy Cabin with Fireplace</p></a>
+            </div>
         </div>
-      </section>
-      <!-- 
-        - #PACKAGE
-      -->
-      <section class="package" id="package">
-        <div class="container">
-
-          <p class="section-subtitle">Popular Packeges</p>
-          <h2 class="h2 section-title">Checkout Our Packeges</h2>
-          <p class="section-text">
-            Fusce hic augue velit wisi quibusdam pariatur, iusto primis, nec nemo, rutrum. Vestibulum cumque laudantium.
-            Sit ornare
-            mollitia tenetur, aptent.
-          </p>
-
-          <ul class="package-list">
-            <li>
-              <div class="package-card">
-                <figure class="card-banner">
-                  <img src="/media/image-1.png"alt="Experience The Great Holiday On Beach" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Experience The Great Holiday On Beach</h3>
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-                    cras, aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-                        <p class="text">7D/6N</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-                        <p class="text">pax: 10</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-                        <p class="text">Malaysia</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-                <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(25 reviews)</p>
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
-                  <p class="price">
-                    $750
-                    <span>/ per person</span>
-                  </p>
-                  <a href="/signup"><button class="btn btn-secondary">Book Now</button></a>
-                </div>
-              </div>
-            </li>
-            <li>
-              <div class="package-card">
-                <figure class="card-banner">
-                  <img src="/media/image-3.png" alt="Summer Holiday To The Oxolotan River" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Summer Holiday To The Oxolotan River</h3>
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-                    cras, aspernatur.
-                  </p>
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-                        <p class="text">7D/6N</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-                        <p class="text">pax: 10</p>
-                      </div>
-                    </li>
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-                        <p class="text">Malaysia</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(20 reviews)</p>
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
-                  <p class="price">
-                    $520
-                    <span>/ per person</span>
-                  </p>
-                  <a href="/signup"><button class="btn btn-secondary">Book Now</button></a>
-                </div>
-              </div>
-            </li>
-
-            <li>
-              <div class="package-card">
-                <figure class="card-banner">
-                  <img src="/media/image-s6.png" alt="Santorini Island's Weekend Vacation" loading="lazy">
-                </figure>
-
-                <div class="card-content">
-                  <h3 class="h3 card-title">Santorini Island's Weekend Vacation</h3>
-                  <p class="card-text">
-                    Laoreet, voluptatum nihil dolor esse quaerat mattis explicabo maiores, est aliquet porttitor! Eaque,
-                    cras, aspernatur.
-                  </p>
-
-                  <ul class="card-meta-list">
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="time"></ion-icon>
-                        <p class="text">7D/6N</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="people"></ion-icon>
-                        <p class="text">pax: 10</p>
-                      </div>
-                    </li>
-
-                    <li class="card-meta-item">
-                      <div class="meta-box">
-                        <ion-icon name="location"></ion-icon>
-                        <p class="text">Malaysia</p>
-                      </div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="card-price">
-                  <div class="wrapper">
-                    <p class="reviews">(40 reviews)</p>
-                    <div class="card-rating">
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                      <ion-icon name="star"></ion-icon>
-                    </div>
-                  </div>
-
-                  <p class="price">
-                    $660
-                    <span>/ per person</span>
-                  </p>
-                  <a href="/signup"><button class="btn btn-secondary">Book Now</button> </a>
-                </div>
-              </div>
-            </li>
-          </ul>
-         <a href="/listings"><button class="btn btn-primary">View All Packages</button></a>
-
+        <div class="col-md-4 py-3 py-md-0">
+            <div class="card" id="tpc">
+               <img src="https://a0.muscache.com/im/pictures/75c5ea1b-eab0-4ec1-8295-cbeb20518fae.jpg?im_w=720&im_format=avif"
+                alt=""
+                style="height: 20rem "
+                class="card image-top">
+                <a href="/listings" > <div class="text-overlay">Superhost</div>
+                <h5><b>Cabin in Guerneville</b> </h5>
+                  <p>
+                    Redwood Retreat: Charming Alpine Cabin</p></a>
+            </div>
         </div>
-      </section>
+    </div>
+  </div>
+
+
+      <div class="container py-5 mt-5 ">
+        <div class="container ">
+            <h2 class="mb-3"> <b>The comforts of home and great monthly rates</b></h2>
+            <p class="text-muted"> Guests agree: these cabins are highly rated for location, cleanliness and more.
+            </p>
+            <div class="row g-4">
+              <div class="col-lg-3 col-md-6 wow fadeInUp">
+                <div class="team-item rounded  overflow-hidden ">
+                    <div class="position-relative">
+                      <a href="/listings" >
+                        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-47380826/original/703ac35b-c19e-47ea-86c1-a348f4b4fad3.jpeg?im_w=720&im_format=avif"
+                        class="card-img-top"
+                        style="height: 18rem "
+                        alt="..."></a>
+                        <div class="text-overlay">Guest's favorite</div>
+                       <div class="card-body">
+                         <h5 class="card-title mt-3 text-dark mb-2">Home in Alexandria</h5>
+                         <p class="card-text text-muted">
+                          
+                          Spacious, 3-level semidetached single-family home with a cozy living room, three bedrooms on the second floor,
+                           a large finished
+                            we have collected from around...</p></a>
+                       </div>
+                     </div>
+              </div>
+          </div>
+              <div class="col-lg-3 col-md-6">
+                  <div class="team-item rounded  ">
+                      <div class="position-relative">
+                        <a href="/listings" >
+                          <img src="https://a0.muscache.com/im/pictures/miso/Hosting-665015970482989205/original/418f18b6-5dd4-4f5d-b381-97c05acc2035.jpeg?im_w=720&im_format=avif"
+                          class="card-img-top"
+                          style="height: 18rem "
+                          alt="..."></a>
+                          <div class="text-overlay">Guest's favorite</div>
+                         <div class="card-body">
+                           <h5 class="card-title mt-3 text-dark mb-2">Rental unit in Springfield</h5>
+                           <p class="card-text text-muted">Point Reyes Unique Creekside Home with Hot Tub
+                             Truly a one of kind handmade, solar powered home of local materials filled 
+                              we have collected from around the world...</p></a>
+                         </div>
+                       </div>
+                </div>
+              </div>
+              <div class="col-lg-3 col-md-6 ">
+                <div class="team-item rounded ">
+                    <div class="position-relative">
+                      <a href="/listings" >
+                        <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-730313469754035806/original/d7f8790f-690f-499d-860f-d13453da9eee.jpeg?im_w=720&im_format=avif"
+                        class="card-img-top"
+                        style="height: 18rem "
+                        alt="..."></a>
+                        <div class="text-overlay">Guest's favorite</div>
+                       <div class="card-body">
+                         <h5 class="card-title mt-3 text-dark mb-2">Townhouse in Alexandria</h5>
+                         <p class="card-text text-muted">Point Reyes Unique Creekside Home with Hot Tub
+                           Truly a one of kind handmade, solar powered home of local materials filled 
+                            we have collected from around the world...</p></a>
+                       </div>
+                     </div>
+              </div>
+            </div>
+      
+            <div class="col-lg-3 col-md-6">
+              <div class="team-item rounded ">
+                  <div class="position-relative">
+                    <a href="/listings" >
+                      <img src="https://a0.muscache.com/im/pictures/hosting/Hosting-724529680708654018/original/c583c2e7-7c38-42cd-aede-be8dc85caa8d.jpeg?im_w=720&im_format=avif"
+                      class="card-img-top"
+                      style="height: 18rem "
+                      alt="..."> </a>
+                      <div class="text-overlay">Guest's favorite</div>
+                     <div class="card-body">
+                       <h5 class="card-title mt-3  mb-3">Cottage in old town</h5>
+                       <p class="card-text text-muted">Point Reyes Unique Creekside Home with Hot Tub
+                         Truly a one of kind handmade, solar powered home of local materials filled 
+                          we have collected from around the...</p></a>
+                     </div>
+                   </div>
+            </div>
+            </div>
+            </div>
+        </div>
+      </div>
+      
+   
+                        
+      <h2 class="mt-5 offset-1 ">  Popular amenities for Benalmádena holiday rentals</h2>
+      <div class="container text-center">
+          <div class="row row-cols-2 row-cols-lg-5 g-2 g-lg-3">
+            <div class="col">
+              <div class="p-3 icons rounded" style="border: 2px dashed rgba(0, 185, 142, .3)">
+                  <i class="fa-solid fa-kitchen-set"></i>
+                  <h4>Kitchen</h4>
+                  </div>
+            </div>
+            <div class="col">
+              <div class="p-3 icons rounded" style="border: 2px dashed rgba(0, 185, 142, .3)"><i class="fa-solid fa-wifi"></i>
+                  <h4>Wifi</h4>
+                  </div>
+            </div>
+            <div class="col">
+              <div class="p-3 icons rounded"style="border: 2px dashed rgba(0, 185, 142, .3)">
+                  <i class="fa-solid fa-water-ladder"></i>
+                  <h4>Pool</h4>
+                 </div>
+            </div>
+            <div class="col">
+              <div class="p-3 icons rounded"style="border: 2px dashed rgba(0, 185, 142, .3)">
+                  <i class="fa-brands fa-product-hunt"></i>
+                  <h4>Free parking </h4>
+                  </div>
+            </div>
+            <div class="col">
+              <div class="p-3 icons rounded" style="border: 2px dashed rgba(0, 185, 142, .3)"><i class="fa-solid fa-wind"></i>
+                  <h4> Air conditioning</h4>
+                 </div>
+            </div>
+          
+          </div>
+        </div>
       <!-- 
         - #GALLERY
       -->
@@ -1213,20 +590,141 @@ section:not(.cta) :is(.section-subtitle, .section-title, .section-text) {
       </section>
     </article>
   </main>
+     
   <!-- 
     - #FOOTER
   -->
+  <div class="container border-top mt-5   ">
+    <div class="row mt-5">
+      <h2 class="mb-3"> Inspiration for future getways</h2>
+     <hr>
+      <div class="col f-info-links">
+        <a  href="/listings/stay"> <p> <b> Phoenix </b> <br>
+          Flat rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Marbella </b> <br>
+          Cottage rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Prescott</b> <br>
+         House rentals</a></p>
+        <br/>
+      </div>
+      <div class="col f-info-links"  >
+        <a  href="/listings/stay"> <p> <b>Beach </b> <br>
+          Flat rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Los Angeles</b> <br>
+         Holiday rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Prague</b> <br>
+         House rentals</a></p>
+        <br />
+      </div>
+      <div class="col  f-info-links  ">
+        <a  href="/listings/stay"> <p> <b> Banff </b> <br>
+          Chalet rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Greer</b> <br>
+         Cabin rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Lake Powel</b> <br>
+         House rentals</a></p>
+        <br />
+      </div>
+      <div class="col f-info-links   ">
+        <a  href="/listings/stay"> <p> <b> Sedona </b> <br>
+          Villa rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Pine Mountain</b> <br>
+         Holiday rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Island Park</b> <br>
+         House rentals</a></p>
+        <br />
+      </div>
+      <div class="col f-info-links   ">
+        <a  href="/listings/stay"> <p> <b> Dauphin Island </b> <br>
+          Cabin rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Gulf Shores</b> <br>
+         Holiday rentals</a></p>
+        <br />
+        <a  href="/listings/stay"> <p> <b> Hamilton Island</b> <br>
+         House rentals</a></p>
+        <br />
+      </div>
+    </div>
+  </div>
+  <div class="container border-top mt-5   ">
+    <div class="row mt-5">
+      <div class="col">
+         <a href="/listings/home"> <i class="fa-solid fa-compass ms-3 mb-3"></i></a>
+        <p>
+        <b>  &copy;  2024,  Accomo made by US. All rights reserved.</b>
+        </p>
+          <div class="f-info-links ">
+             <a href="#" ><i class="fa-brands fa-square-facebook ms-3 fs-4 me-1 "></i>
+              <i class="fa-brands fa-square-instagram  fs-4 me-1"></i>
+              <i class="fa-brands fa-linkedin fs-4 "></i>
+            
+            </a>
+  
+          </div>
+      </div>
+      <div class="col f-info-links"  >
+        <p> <b> Company </b></p>
+        <a  href="/listings/foterpage">Airbnb your home</a>
+        <br />
+        <a href="/listings/foterpage" >Newsroom</a>
+        <br />
+        <a href="/listings/foterpage">Pricing</a>
+        <br />
+        <a href="/listings/foterpage">Referral programme</a>
+        <br />
+        <a href="/listings/foterpage">Careers</a>
+        <br />
+        <a href="/listings/foterpage">Press & media</a>
+        <br />
+        <a href="/listings/foterpage">Join a free Hosting class</a>
+        <br>
+      </div>
+      <div class="col  f-info-links  ">
+        <p> <b>Support </b></p>
+        <a href="/listings/foterpage">Help Centre</a>
+        <br />
+        <a href="/listings/foterpage">AirCover</a>
+        <br />
+        <a href="/listings/foterpage">Anti-discrimination</a>
+        <br />
+        <a href="/listings/foterpage">Disability support</a>
+        <br />
+        <a href="/listings/foterpage">Cancellation options</a>
+        
+      </div>
+      <div class="col f-info-links ">
+        <p> <b>Hosting</b></p>
+        <a href="/listings/foterpage">Open an account</a>
+        <br />
+        <a href="/listings/foterpage">Community forum</a>
+        <br />
+        <a href="/listings/foterpage">Hosting responsibly</a>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
   <footer>
     <div class="f-info mt-5">
-        <div class="f-info-socials">
+        <div class="f-info-socials f-info-links">
            <a href="#" ><i class="fa-brands fa-square-facebook"></i></a>
-           <a href=" https://www.instagram.com/half_engineer0034?igsh=ajhjamszcm9lbTFr"> <i class="fa-brands fa-square-instagram"></i></a>
-           <a href=" https://www.linkedin.com/in/ayush-kumar-prince-443700235?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app " ><i class="fa-brands fa-linkedin"></i></a>
+           <a href="#"> <i class="fa-brands fa-square-instagram"></i></a>
+           <a href="#" ><i class="fa-brands fa-linkedin"></i></a>
 
         </div>
-        <div class="f-info-brand"> &copy 2024  ACCOMO private Limited Made By Sonam & Team </div>
+        <div class="f-info-brand"><b> &copy 2024  ACCOMO private Limited Made By  Sonam</b>  </div>
         <div class="f-info-links">
-            <a href="/privacy">Privacy</a>
+            <a href="/privacy"><b>Privacy </b></a>
         </div>
       </div >
 </footer>

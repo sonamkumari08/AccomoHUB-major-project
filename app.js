@@ -60,6 +60,7 @@ store.on("error", () => {
 });
 
 
+
 const sessionOptions = {
   store,
   secret: process.env.SECRET,
@@ -84,6 +85,7 @@ app.use(express.static(path.join(__dirname,"/public")));
 app.get("/", (req, res) => {
   res.render("listings/home.ejs");
 });
+
 
 
 app.use(session(sessionOptions));
