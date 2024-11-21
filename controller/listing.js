@@ -78,7 +78,9 @@ const Listing = require("../Models/listing");
       req.flash("error", "Listing is Edited");
       res.redirect("/listings");
     }
-    res.render("listings/edit.ejs", { listing });
+    let originalImageUrl = listing.image.url;
+    originalImageUrl=originalImageUrl.replace("/upload", "/upload/,w_250");
+    res.render("listings/edit.ejs", { listing, originalImageUrl });
   };
   module.exports.updateListing = async (req, res) => {
     let { id } = req.params;
@@ -95,7 +97,7 @@ const Listing = require("../Models/listing");
   module.exports.distroyListing = async (req, res) => {
     let { id } = req.params;
     let deletedListing = await Listing.findByIdAndDelete(id);
-    console.log(deletedListing);
+    //console.log(deletedListing);
     req.flash("success", "New Listing deleted!");
     res.redirect("/listings");
   };
